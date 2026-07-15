@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0b111b" />
+  <title>永劫無間｜隨機選角</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='8' fill='%230b111b'/%3E%3Cpath d='M32 8 56 32 32 56 8 32Z' fill='none' stroke='%23d5b16b' stroke-width='2'/%3E%3Ctext x='32' y='41' text-anchor='middle' font-size='27' fill='%23d5b16b'%3E武%3C/text%3E%3C/svg%3E" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+TC:wght@600;700;900&family=Noto+Sans+TC:wght@400;500;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="mist mist-one"></div>
+  <div class="mist mist-two"></div>
+
+  <main class="page-shell">
+    <header class="site-header">
+      <div>
+        <p class="eyebrow">NARAKA: BLADEPOINT</p>
+        <h1>命定之人</h1>
+      </div>
+      <div class="header-mark" aria-hidden="true"><span>武</span></div>
+      <p class="header-copy">天地無常，且問此局<br />誰與你並肩而戰</p>
+    </header>
+
+    <div class="divider"><span></span><i></i><span></span></div>
+
+    <div class="content-grid">
+      <section class="roster-panel" aria-labelledby="roster-title">
+        <div class="section-heading">
+          <div>
+            <p class="section-kicker">HERO ROSTER</p>
+            <h2 id="roster-title">全角色名冊</h2>
+          </div>
+          <span class="character-count"><b>27</b> 位英雄</span>
+        </div>
+        <div id="character-grid" class="character-grid"></div>
+      </section>
+
+      <section class="draw-panel" aria-labelledby="draw-title">
+        <div class="draw-heading">
+          <p class="section-kicker">YOUR DESTINY</p>
+          <h2 id="draw-title">本局陣容</h2>
+          <p>三人同行，各有天命</p>
+        </div>
+
+        <div id="result-cards" class="result-cards" aria-live="polite"></div>
+
+        <button id="draw-button" class="draw-button" type="button">
+          <span class="button-glyph" aria-hidden="true">✦</span>
+          <span class="button-text"><b>抽取角色</b><small>RANDOMIZE</small></span>
+          <span class="button-glyph" aria-hidden="true">✦</span>
+        </button>
+        <p class="draw-note">每次抽取 3 位不重複角色，並隨機搭配 F／V 技能</p>
+      </section>
+    </div>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
