@@ -221,7 +221,7 @@ h1 {
   position: relative;
   display: flex;
   overflow: hidden;
-  aspect-ratio: 119 / 181;
+  aspect-ratio: 119 / 209;
   flex-direction: column;
   border: 1px solid rgba(213,177,107,.32);
   background: #111a26;
@@ -234,6 +234,18 @@ h1 {
 .result-portrait { position: relative; min-height: 0; flex: 1; overflow: hidden; }
 .result-portrait img { width: 100%; height: 100%; object-fit: cover; }
 .result-portrait::after { position: absolute; inset: 0; content: ""; background: linear-gradient(to top, rgba(5,8,13,.9), transparent 52%); }
+.result-name {
+  display: grid;
+  min-height: 34px;
+  place-items: center;
+  border-top: 1px solid rgba(213,177,107,.2);
+  color: #f5ead4;
+  font: 700 clamp(12px, 1.05vw, 15px) "Noto Serif TC", serif;
+  letter-spacing: .12em;
+  white-space: nowrap;
+  background: linear-gradient(90deg, #0a1019, #18212c 50%, #0a1019);
+  text-shadow: 0 2px 7px rgba(0,0,0,.7);
+}
 .result-index {
   position: absolute;
   z-index: 3;
@@ -367,7 +379,8 @@ h1 {
 @media (max-width: 430px) {
   .character-grid { grid-template-columns: repeat(5, 1fr); }
   .character-count { display: none; }
-  .result-card { aspect-ratio: 119 / 174; }
+  .result-card { aspect-ratio: 119 / 210; }
+  .result-name { min-height: 30px; font-size: 12px; letter-spacing: .04em; }
   h1 { letter-spacing: .12em; }
 }
 

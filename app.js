@@ -1,5 +1,12 @@
-const characters = Array.from({ length: 27 }, (_, index) => ({
+const characterNames = [
+  "寧紅夜", "沈妙", "天海", "殷紫萍", "特木爾", "季滄海", "土御門胡桃", "妖刀姬", "崔三娘",
+  "岳山", "無塵", "顧清寒", "武田信忠", "迦南", "胡為", "季瑩瑩", "玉玲瓏", "哈迪",
+  "魏輕", "劉煉", "張起靈", "席拉", "藍夢", "萬鈞", "李尋歡", "巫真", "甘璇",
+];
+
+const characters = characterNames.map((name, index) => ({
   id: index + 1,
+  name,
   image: `assets/characters/character-${String(index + 1).padStart(2, "0")}.png`,
 }));
 
@@ -29,16 +36,17 @@ function portraitMarkup(character, className, indexLabel = "", skillRoll = null)
       <article class="${className}" data-character-id="${character.id}">
         ${skillsMarkup}
         <div class="result-portrait">
-          <img src="${character.image}" alt="角色 ${String(character.id).padStart(2, "0")}" draggable="false" />
+          <img src="${character.image}" alt="${character.name}" draggable="false" />
           ${indexLabel ? `<span class="result-index player-${indexLabel}" aria-label="玩家 ${indexLabel}">${indexLabel}</span>` : ""}
         </div>
+        <div class="result-name">${character.name}</div>
       </article>
     `;
   }
 
   return `
     <article class="${className}" data-character-id="${character.id}">
-      <img src="${character.image}" alt="角色 ${String(character.id).padStart(2, "0")}" draggable="false" />
+      <img src="${character.image}" alt="${character.name}" draggable="false" />
     </article>
   `;
 }
