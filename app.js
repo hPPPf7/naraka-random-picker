@@ -30,7 +30,7 @@ function portraitMarkup(character, className, indexLabel = "", skillRoll = null)
         ${skillsMarkup}
         <div class="result-portrait">
           <img src="${character.image}" alt="角色 ${String(character.id).padStart(2, "0")}" draggable="false" />
-          ${indexLabel ? `<span class="result-index">${indexLabel}</span>` : ""}
+          ${indexLabel ? `<span class="result-index player-${indexLabel}" aria-label="玩家 ${indexLabel}">${indexLabel}</span>` : ""}
         </div>
       </article>
     `;
@@ -79,7 +79,7 @@ function renderResults(selected, showSkills = true) {
     .map((character, index) => portraitMarkup(
       character,
       "result-card",
-      `0${index + 1}`,
+      `${index + 1}`,
       showSkills ? rollSkills(character) : null,
     ))
     .join("");
