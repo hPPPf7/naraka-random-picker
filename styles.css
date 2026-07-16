@@ -295,22 +295,19 @@ h1 {
   height: 31px;
   align-items: center;
   justify-content: center;
-  border: 1px solid rgba(255,255,255,.28);
-  color: #fff6e8;
+  border: 0;
+  color: #f1eee8;
   font: 900 16px "Noto Sans TC", sans-serif;
   letter-spacing: .03em;
-  background: rgba(8,12,18,.86);
-  clip-path: polygon(8% 0, 92% 0, 100% 24%, 100% 76%, 92% 100%, 8% 100%, 0 76%, 0 24%);
+  background: transparent;
 }
 
 .skill-tag i { margin-right: 1px; font-style: normal; }
 .skill-tag.has-icon { min-width: 54px; height: 41px; gap: 2px; padding: 2px 4px 2px 2px; }
 .skill-tag.has-icon img { width: 35px; height: 35px; object-fit: cover; }
 .skill-tag.has-icon b { color: #fff; font-size: 14px; line-height: 1; }
-.skill-f { border-color: rgba(239,182,83,.65); box-shadow: inset 0 -8px 13px rgba(170,95,22,.28); }
-.skill-f i { color: #ffc766; }
-.skill-v { border-color: rgba(83,190,220,.65); box-shadow: inset 0 -8px 13px rgba(18,112,151,.3); }
-.skill-v i { color: #77dbf4; }
+.skill-f, .skill-v { box-shadow: none; }
+.skill-f i, .skill-v i { color: #f1eee8; }
 .skill-plus { color: rgba(255,255,255,.78); font-size: 13px; }
 .skill-rolls.is-pending .skill-tag { color: rgba(255,255,255,.46); filter: saturate(.35); }
 
