@@ -304,7 +304,7 @@ h1 {
 
 .skill-tag i { margin-right: 1px; font-style: normal; }
 .skill-tag.has-icon { min-width: 54px; height: 41px; gap: 2px; padding: 2px 4px 2px 2px; }
-.skill-tag.has-icon img { width: 35px; height: 35px; object-fit: cover; }
+.skill-tag.has-icon img { width: 35px; height: 39px; object-fit: contain; }
 .skill-tag.has-icon b { color: #fff; font-size: 14px; line-height: 1; }
 .skill-f, .skill-v { box-shadow: none; }
 .skill-f i, .skill-v i { color: #f1eee8; }
@@ -384,7 +384,7 @@ h1 {
   .skill-rolls { min-height: 44px; gap: 2px; }
   .skill-tag { min-width: 37px; height: 31px; font-size: 14px; }
   .skill-tag.has-icon { min-width: 43px; height: 35px; padding: 1px 2px 1px 1px; }
-  .skill-tag.has-icon img { width: 29px; height: 29px; }
+  .skill-tag.has-icon img { width: 29px; height: 33px; object-fit: contain; }
   .skill-tag.has-icon b { font-size: 12px; }
   .skill-plus { font-size: 10px; }
   h1 { letter-spacing: .12em; }
