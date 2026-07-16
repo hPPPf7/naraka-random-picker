@@ -7,7 +7,7 @@ const characterNames = [
 const characters = characterNames.map((name, index) => ({
   id: index + 1,
   name,
-  hasSkillIcons: index < 5,
+  hasSkillIcons: index < 15,
   image: `assets/characters/character-${String(index + 1).padStart(2, "0")}.png`,
 }));
 
