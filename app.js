@@ -7,6 +7,7 @@ const characterNames = [
 const characters = characterNames.map((name, index) => ({
   id: index + 1,
   name,
+  hasSkillIcons: index < 5,
   image: `assets/characters/character-${String(index + 1).padStart(2, "0")}.png`,
 }));
 
@@ -20,9 +21,17 @@ function portraitMarkup(character, className, indexLabel = "", skillRoll = null)
   if (className.includes("result-card")) {
     const skillsMarkup = skillRoll ? `
       <div class="skill-rolls" aria-label="技能抽選結果：${skillRoll.f}、${skillRoll.v}">
-        <span class="skill-tag skill-f"><i>F</i>${skillRoll.f.slice(1)}</span>
+        <span class="skill-tag skill-f ${skillRoll.fIcon ? "has-icon" : ""}">
+          ${skillRoll.fIcon
+            ? `<img src="${skillRoll.fIcon}" alt="${character.name} ${skillRoll.f} 圖示" /><b>${skillRoll.f.slice(1)}</b>`
+            : `<i>F</i>${skillRoll.f.slice(1)}`}
+        </span>
         <span class="skill-plus">＋</span>
-        <span class="skill-tag skill-v"><i>V</i>${skillRoll.v.slice(1)}</span>
+        <span class="skill-tag skill-v ${skillRoll.vIcon ? "has-icon" : ""}">
+          ${skillRoll.vIcon
+            ? `<img src="${skillRoll.vIcon}" alt="${character.name} ${skillRoll.v} 圖示" /><b>${skillRoll.v.slice(1)}</b>`
+            : `<i>V</i>${skillRoll.v.slice(1)}`}
+        </span>
       </div>
     ` : `
       <div class="skill-rolls is-pending" aria-hidden="true">
@@ -75,10 +84,15 @@ function randomItem(items) {
 function rollSkills(character) {
   const maxLevel = character.id === specialCharacterId ? 3 : 2;
   const levels = Array.from({ length: maxLevel }, (_, index) => index + 1);
+  const fLevel = randomItem(levels);
+  const vLevel = randomItem(levels);
+  const assetPrefix = `assets/skills/character-${String(character.id).padStart(2, "0")}`;
 
   return {
-    f: `F${randomItem(levels)}`,
-    v: `V${randomItem(levels)}`,
+    f: `F${fLevel}`,
+    v: `V${vLevel}`,
+    fIcon: character.hasSkillIcons ? `${assetPrefix}-f${fLevel}.png` : null,
+    vIcon: character.hasSkillIcons ? `${assetPrefix}-v${vLevel}.png` : null,
   };
 }
 
